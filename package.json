@@ -1,0 +1,59 @@
+{
+	"author": {
+		"name": "Baptiste Pillot",
+		"email": "baptiste@pillot.fr"
+	},
+	"dependencies": {
+		"@itrocks/action": "latest",
+		"@itrocks/action-bar": "latest",
+		"@itrocks/action-request": "latest",
+		"@itrocks/output": "latest",
+		"@itrocks/route": "latest",
+		"@itrocks/storage": "latest",
+		"@itrocks/ux-core": "latest"
+	},
+	"description": "Generic action-based object edit form in HTML and JSON",
+	"devDependencies": {
+		"sass": "^1.83",
+		"typescript": "~5.6"
+	},
+	"engines": {
+		"node": ">=18"
+	},
+	"exports": "./cjs/edit.js",
+	"homepage": "https://it.rocks",
+	"files": [
+		"LICENSE",
+		"README.md",
+		"cjs/*",
+		"css/*",
+		"routes.json",
+		"!*.map"
+	],
+	"keywords": [
+		"API",
+		"backend",
+		"component",
+		"edit",
+		"generic",
+		"html",
+		"it.rocks",
+		"json",
+		"render",
+		"standard",
+		"UI",
+		"UX"
+	],
+	"license": "ISC",
+	"name": "@itrocks/edit",
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/itrocks-ts/edit.git"
+	},
+	"scripts": {
+		"build": "tsc -p tsconfig.json && cp src/*.html cjs/ && npm run build:css",
+		"build:css": "sass --no-source-map src/edit.scss:css/edit.css"
+	},
+	"types": "./cjs/edit.d.ts",
+	"version": "0.0.1"
+}
