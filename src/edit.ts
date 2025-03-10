@@ -1,7 +1,9 @@
 import { Action }     from '@itrocks/action'
+import { getActions } from '@itrocks/action'
 import { Need }       from '@itrocks/action'
 import { Request }    from '@itrocks/action-request'
 import { Route }      from '@itrocks/route'
+import { routeOf }    from '@itrocks/route'
 import { dataSource } from '@itrocks/storage'
 
 @Need('object', 'new')
@@ -12,6 +14,8 @@ export class Edit extends Action
 	async html(request: Request)
 	{
 		const object = await request.getObject()
+		const route  = routeOf(this)
+		this.actions = getActions(object ?? new request.type, route.slice(route.lastIndexOf('/') + 1))
 		return this.htmlTemplateResponse(object ?? new request.type, request, __dirname + '/edit.html')
 	}
 

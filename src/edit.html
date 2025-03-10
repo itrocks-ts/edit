@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<link href="../../../@itrocks/action-bar/action.css" rel="stylesheet">
-	<link href="../../../@itrocks/output/css/output.css" rel="stylesheet">
-	<link href="../../../@itrocks/ux-core/css/app.css" rel="stylesheet">
-	<link href="../../../@itrocks/ux-core/css/article.css" rel="stylesheet">
+	<link href="../../action-bar/action.css" rel="stylesheet">
+	<link href="../../output/css/output.css" rel="stylesheet">
+	<link href="../../ux-core/css/app.css" rel="stylesheet">
+	<link href="../../ux-core/css/article.css" rel="stylesheet">
 	<link href="../css/edit.css" rel="stylesheet">
 	<meta charset="utf-8">
 	<title>{-.action.ucFirst} {@output}</title>
@@ -13,6 +13,7 @@
 <main>
 <!--BEGIN-->
 
+	<!--#main-->
 	<form
 		action="app://(@route)/save" autocomplete="off"
 		data-action="edit" data-class="{%name}" data-id="{?id}" data-route="{@route}"
@@ -36,6 +37,7 @@
 			<!--end-->
 		</ul>
 	</form>
+	<!--#end-->
 
 <!--END-->
 </main>
