@@ -15,7 +15,7 @@ export class Edit extends Action
 	{
 		const object = await request.getObject()
 		const route  = routeOf(this)
-		this.actions = getActions(object ?? new request.type, route.slice(route.lastIndexOf('/') + 1))
+		this.actions = getActions(object ?? request.type, route.slice(route.lastIndexOf('/') + 1))
 		return this.htmlTemplateResponse(object ?? new request.type, request, __dirname + '/edit.html')
 	}
 
