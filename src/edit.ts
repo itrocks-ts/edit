@@ -13,10 +13,10 @@ export class Edit extends Action
 
 	async html(request: Request)
 	{
-		const object = await request.getObject()
+		const object = await request.getObject() ?? new request.type
 		const route  = routeOf(this)
-		this.actions = getActions(object ?? request.type, route.slice(route.lastIndexOf('/') + 1))
-		return this.htmlTemplateResponse(object ?? new request.type, request, __dirname + '/edit.html')
+		this.actions = getActions(object, route.slice(route.lastIndexOf('/') + 1))
+		return this.htmlTemplateResponse(object, request, __dirname + '/edit.html')
 	}
 
 	async json(request: Request)

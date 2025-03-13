@@ -3,6 +3,7 @@
 <head>
 	<link href="../../action-bar/action.css" rel="stylesheet">
 	<link href="../../output/css/output.css" rel="stylesheet">
+	<link href="../../save/css/action.css" rel="stylesheet">
 	<link href="../../ux-core/css/app.css" rel="stylesheet">
 	<link href="../../ux-core/css/article.css" rel="stylesheet">
 	<link href="../css/edit.css" rel="stylesheet">
@@ -25,7 +26,9 @@
 				<li class="close"><a href="app://(@route)" target="main">Close</a></li>
 				<li class="save"><input type="submit" value="Save"></li>
 				<!--id?-->
-				<li class="delete"><a href="app://(@route)/delete" target="#notifications:prepend">Delete</a></li>
+				<!---.actions-->
+				<li class="{action}">{{template}}</li>
+				<!--end-->
 				<!--end-->
 			</ul>
 		</header>
