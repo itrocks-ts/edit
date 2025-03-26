@@ -1,0 +1,2 @@
+routes:
+  /edit: '@itrocks/edit'
