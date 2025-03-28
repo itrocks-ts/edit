@@ -47,9 +47,9 @@
 		"url": "git+https://github.com/itrocks-ts/edit.git"
 	},
 	"scripts": {
-		"build": "tsc -p tsconfig.json && cp src/*.html cjs/ && npm run build:css",
+		"build": "tsc && cp src/*.html cjs/ && npm run build:css",
 		"build:css": "sass --no-source-map src:css && cp src/*.svg css/"
 	},
 	"types": "./cjs/edit.d.ts",
-	"version": "0.0.8"
+	"version": "0.0.9"
 }
