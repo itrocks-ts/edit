@@ -11,9 +11,14 @@ import { dataSource } from '@itrocks/storage'
 export class Edit extends Action
 {
 
+	async getObject(request: Request)
+	{
+		return await request.getObject() ?? new request.type
+	}
+
 	async html(request: Request)
 	{
-		const object = await request.getObject() ?? new request.type
+		const object = await this.getObject(request)
 		const route  = routeOf(this)
 		this.actions = getActions(object, route.slice(route.lastIndexOf('/') + 1))
 		return this.htmlTemplateResponse(object, request, __dirname + '/edit.html')
