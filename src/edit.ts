@@ -8,15 +8,15 @@ import { dataSource } from '@itrocks/storage'
 
 @Need('object', 'new')
 @Route('/edit')
-export class Edit extends Action
+export class Edit<T extends object = object> extends Action<T>
 {
 
-	async getObject<T extends object>(request: Request<T>)
+	async getObject(request: Request<T>)
 	{
 		return await request.getObject() ?? new request.type
 	}
 
-	async html(request: Request)
+	async html(request: Request<T>)
 	{
 		const object = await this.getObject(request)
 		const route  = routeOf(this)
@@ -24,7 +24,7 @@ export class Edit extends Action
 		return this.htmlTemplateResponse(object, request, __dirname + '/edit.html')
 	}
 
-	async json(request: Request)
+	async json(request: Request<T>)
 	{
 		const objects = await request.getObjects()
 		if (objects.length === 1) {
