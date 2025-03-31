@@ -11,7 +11,7 @@ import { dataSource } from '@itrocks/storage'
 export class Edit extends Action
 {
 
-	async getObject(request: Request)
+	async getObject<T extends object>(request: Request<T>)
 	{
 		return await request.getObject() ?? new request.type
 	}
