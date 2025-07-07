@@ -1,22 +1,23 @@
 
-form[data-action=edit] {
-	ul.object.properties > li {
+form ul.object.properties {
 
-		&:has(input:not(.empty) + input[type=hidden][value='']) {
-			position: relative;
+	li.combobox:has(>input:not(.empty) + input[type=hidden][value='']) {
+		position: relative;
 
-			&:after {
-				background: url('add.svg');
-				content: '';
-				cursor: pointer;
-				display: inline-block;
-				height: 15px;
-				right: -7px;
-				position: absolute;
-				top: -7px;
-				width: 15px;
-			}
+		&:after {
+			background: url('add.svg');
+			content: '';
+			cursor: pointer;
+			display: inline-block;
+			height: 15px;
+			right: -7px;
+			position: absolute;
+			top: -7px;
+			width: 15px;
 		}
+	}
+
+	> li {
 
 		> input {
 			border: 1px solid #ddd;
@@ -25,34 +26,37 @@ form[data-action=edit] {
 				margin: 8px 0;
 			}
 		}
-	}
 
-	> ul[data-type=objects] {
-		background: #f8f8f8;
-		border: 1px solid #ddd;
-		border-radius: 4px;
-		display: flex;
-		flex-wrap: wrap;
-		gap: 3px;
-		padding: 3px;
+		> ul[data-type=objects] {
+			background: #f8f8f8;
+			border: 1px solid #ddd;
+			border-radius: 4px;
+			display: flex;
+			flex-wrap: wrap;
+			gap: 3px;
+			padding: 3px;
 
-		> li > input {
-			padding-bottom: 2px;
-			padding-top: 2px;
-		}
-
-		&[data-multiple-contained-auto-width] > li {
-			box-sizing: border-box;
-			padding: 3px 8px;
-			position: relative;
-			white-space: pre;
-
-			> input {
+			> li {
 				box-sizing: border-box;
-				left: 0;
-				position: absolute;
-				top: 0;
-				width: 100%;
+				display: inline-block;
+				padding: 3px 8px;
+				position: relative;
+				white-space: pre;
+
+				> input {
+					box-sizing: border-box;
+					left: 0;
+					padding-bottom: 2px;
+					padding-top: 2px;
+					position: absolute;
+					top: 0;
+					width: 100%;
+				}
+
+				> .suggestions {
+					margin-left: -8px;
+					margin-top: 18px;
+				}
 			}
 		}
 	}
