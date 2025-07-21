@@ -18,6 +18,7 @@
 	<form
 		action="app://(@route)/save" autocomplete="off"
 		data-action="edit" data-class="{%name}" data-id="{?id}" data-route="{@route}"
+		data-if="{%hasFileProperty}" enctype="multipart/form-data" data-end
 		method="post" target="#notifications:prepend"
 	>
 		<header>
