@@ -1,7 +1,7 @@
 
-form ul.object.properties {
-
-	li.combobox:has(>input:not(.empty) + input[type=hidden][value='']) {
+form ul.object.properties li,
+.property {
+	&.combobox:has(>input:not(.empty) + input[type=hidden][value='']) {
 		position: relative;
 
 		&:after {
@@ -16,48 +16,53 @@ form ul.object.properties {
 			width: 15px;
 		}
 	}
+}
 
-	> li {
+form ul.object.properties > li,
+.property {
 
-		> input {
-			border: 1px solid #ddd;
+	> input {
+		border: 1px solid #ddd;
 
-			&[type=checkbox] {
-				margin: 8px 0;
-			}
+		&[type=checkbox] {
+			margin: 8px 0;
 		}
+	}
 
-		> ul[data-type=objects] {
-			background: #f8f8f8;
-			border: 1px solid #ddd;
-			border-radius: 4px;
-			display: flex;
-			flex-wrap: wrap;
-			gap: 3px;
-			padding: 3px;
+	> ul[data-type=objects] {
+		background: #f8f8f8;
+		border: 1px solid #ddd;
+		border-radius: 4px;
+		display: flex;
+		flex-wrap: wrap;
+		gap: 3px;
+		padding: 3px;
 
-			> li {
+		> li {
+			box-sizing: border-box;
+			display: inline-block;
+			padding: 3px 8px;
+			position: relative;
+			white-space: pre;
+
+			> input {
 				box-sizing: border-box;
-				display: inline-block;
-				padding: 3px 8px;
-				position: relative;
-				white-space: pre;
+				left: 0;
+				padding-bottom: 2px;
+				padding-top: 2px;
+				position: absolute;
+				top: 0;
+				width: 100%;
+			}
 
-				> input {
-					box-sizing: border-box;
-					left: 0;
-					padding-bottom: 2px;
-					padding-top: 2px;
-					position: absolute;
-					top: 0;
-					width: 100%;
-				}
-
-				> .suggestions {
-					margin-left: -8px;
-					margin-top: 18px;
-				}
+			> .suggestions {
+				margin-left: -8px;
+				margin-top: 18px;
 			}
 		}
 	}
+}
+
+.property + .action {
+	padding: .5em .5em .5em 26px;
 }
