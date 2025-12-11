@@ -27,6 +27,7 @@
 		"!*.map"
 	],
 	"keywords": [
+		"action",
 		"API",
 		"backend",
 		"component",
@@ -37,6 +38,7 @@
 		"json",
 		"render",
 		"standard",
+		"view",
 		"UI",
 		"UX"
 	],
@@ -51,5 +53,5 @@
 		"build:css": "sass --no-source-map src:css && cp src/*.svg css/"
 	},
 	"types": "./cjs/edit.d.ts",
-	"version": "0.0.23"
+	"version": "0.0.24"
 }
