@@ -1,8 +1,12 @@
 
 form ul.object.properties li,
 .property {
-	&:has(>input.autocomplete:not(.empty) + input[type=hidden][value='']) {
+	&:has(> input[name$=_id][type=hidden][value=''] + input.autocomplete:not(.empty)) {
 		position: relative;
+
+		& > input.autocomplete {
+			anchor-name: --add-after;
+		}
 
 		&::after {
 			background: url('add.svg');
@@ -10,11 +14,19 @@ form ul.object.properties li,
 			cursor: pointer;
 			display: inline-block;
 			height: 15px;
-			right: -7px;
 			position: absolute;
 			top: -7px;
 			width: 15px;
 			z-index: 1;
+		}
+
+		&[data-property]::after {
+			left: anchor(--ac right);
+			transform: translate(-7px, 0);
+		}
+
+		&:not([data-property])::after {
+			right: -7px;
 		}
 	}
 }
