@@ -34,12 +34,8 @@ form ul.object.properties li,
 form ul.object.properties > li,
 .property {
 
-	> input {
-		border: 1px solid #ddd;
-
-		&[type=checkbox] {
-			margin: 8px 0;
-		}
+	> input[type=checkbox] {
+		margin: 8px 0;
 	}
 
 	> table {
