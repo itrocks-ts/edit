@@ -11,10 +11,10 @@
 	"description": "Generic action-based object edit form in HTML and JSON",
 	"devDependencies": {
 		"sass": "^1.95",
-		"typescript": "~5.9"
+		"typescript": "^6.0"
 	},
 	"engines": {
-		"node": ">=18"
+		"node": ">=24"
 	},
 	"exports": "./cjs/edit.js",
 	"homepage": "https://it.rocks",
@@ -22,8 +22,8 @@
 		"config.yaml",
 		"LICENSE",
 		"README.md",
-		"cjs/*",
-		"css/*",
+		"cjs",
+		"css",
 		"!*.map"
 	],
 	"keywords": [
@@ -52,6 +52,5 @@
 		"build": "tsc && cp src/*.html cjs/ && npm run build:css",
 		"build:css": "sass --no-source-map src:css && cp src/*.svg css/"
 	},
-	"types": "./cjs/edit.d.ts",
-	"version": "0.2.1"
+	"version": "0.2.2"
 }
