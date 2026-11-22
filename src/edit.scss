@@ -1,76 +1,10 @@
-
-form ul.object.properties li,
-.property {
-	&:has(> input[name$=_id][type=hidden][value=''] + input.autocomplete:not(.empty)) {
-		position: relative;
-
-		& > input.autocomplete {
-			anchor-name: --add-after;
-		}
-
-		&::after {
-			background: url('add.svg');
-			content: '';
-			cursor: pointer;
-			display: inline-block;
-			height: 15px;
-			position: absolute;
-			top: -7px;
-			width: 15px;
-			z-index: 1;
-		}
-
-		&[data-property]::after {
-			left: anchor(--ac right);
-			transform: translate(-7px, 0);
-		}
-
-		&:not([data-property])::after {
-			right: -7px;
-		}
-	}
-}
+@import url('../../form-controls/css/form-controls.css');
 
 form ul.object.properties > li,
 .property {
 
-	> input[type=checkbox] {
-		margin: 8px 0;
-	}
-
 	> table {
 		margin: 4px 5px;
-	}
-
-	> ul[data-type=objects] {
-		background: #f8f8f8;
-		border: 1px solid #ddd;
-		border-radius: 4px;
-		display: flex;
-		flex-wrap: wrap;
-		gap: 3px;
-		padding: 3px;
-
-		> li {
-			display: inline-block;
-			padding: 3px 8px;
-			position: relative;
-			white-space: pre;
-
-			> .autocomplete {
-				left: 0;
-				padding-bottom: 2px;
-				padding-top: 2px;
-				position: absolute;
-				top: 0;
-				width: 100%;
-			}
-
-			> .suggestions {
-				margin-left: -8px;
-				margin-top: 18px;
-			}
-		}
 	}
 }
 
